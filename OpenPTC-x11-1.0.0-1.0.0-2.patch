@@ -1,0 +1,64 @@
+diff -r -u OpenPTC-x11-1.0.0/CHANGES OpenPTC-x11-1.0.0-2/CHANGES
+--- OpenPTC-x11-1.0.0/CHANGES	Thu Apr  1 00:41:47 1999
++++ OpenPTC-x11-1.0.0-2/CHANGES	Fri Apr 16 00:37:22 1999
+@@ -4,7 +4,11 @@
+ 
+ ---------------------------------------------------------------------------
+ 
+-Version OpenPTC 1.0 (01/04/1999):
++Version OpenPTC 1.0.0-2 (16/04/1999):
++  - Fixed an annoying bug concerning palette handling in non-8 bit modes.
++    The bug caused segfaults.
++
++Version OpenPTC 1.0.0 (01/04/1999):
+   - Upgraded the whole thing to the OpenPTC 1.0 standard
+   - The API is now f*r*o*z*e*n :)
+   - Implemented a microsecond timer using gettimeofday. Feel free to use 
+Only in OpenPTC-x11-1.0.0/library: libptc.so.1
+diff -r -u OpenPTC-x11-1.0.0/ptc.spec OpenPTC-x11-1.0.0-2/ptc.spec
+--- OpenPTC-x11-1.0.0/ptc.spec	Thu Apr  1 00:27:49 1999
++++ OpenPTC-x11-1.0.0-2/ptc.spec	Fri Apr 16 00:37:30 1999
+@@ -1,5 +1,5 @@
+ %define version 1.0.0
+-%define rel 1
++%define rel 2
+ 
+ Summary: OpenPTC for X11
+ Name: OpenPTC-x11
+diff -r -u OpenPTC-x11-1.0.0/source/X11/DGADisplay.cc OpenPTC-x11-1.0.0-2/source/X11/DGADisplay.cc
+--- OpenPTC-x11-1.0.0/source/X11/DGADisplay.cc	Sat Mar 20 23:44:44 1999
++++ OpenPTC-x11-1.0.0-2/source/X11/DGADisplay.cc	Fri Apr 16 00:33:39 1999
+@@ -231,11 +231,11 @@
+ 
+   // Create colour map in 8 bit mode
+ 
++  m_colours=new XColor[256];
++  if(!m_colours) throw Error("Cannot allocated colour map cells");
++
+   if(m_format.bits()==8)
+   {
+-    m_colours=new XColor[256];
+-    if(!m_colours) throw Error("Cannot allocated colour map cells");
+-
+     m_cmap=XCreateColormap(m_disp,RootWindow(m_disp,m_screen),
+                            DefaultVisual(m_disp,m_screen),AllocAll);
+     if(!m_cmap) throw Error("Cannot create colour map");
+diff -r -u OpenPTC-x11-1.0.0/source/X11/WindowDisplay.cc OpenPTC-x11-1.0.0-2/source/X11/WindowDisplay.cc
+--- OpenPTC-x11-1.0.0/source/X11/WindowDisplay.cc	Mon Mar 29 18:57:39 1999
++++ OpenPTC-x11-1.0.0-2/source/X11/WindowDisplay.cc	Fri Apr 16 00:33:52 1999
+@@ -266,12 +266,12 @@
+ 
+ void X11WindowDisplay::createColormap()
+ {
++  m_colours=new XColor[256];
++  if(!m_colours) throw Error("Cannot allocated colour map cells");
++
+   // If we are in indexed mode, create the colour map 
+   if(m_format.bits()==8)
+   { 
+-    m_colours=new XColor[256];
+-    if(!m_colours) throw Error("Cannot allocated colour map cells");
+-
+     m_cmap=XCreateColormap(m_disp,RootWindow(m_disp,m_screen),
+ 		           DefaultVisual(m_disp,m_screen),AllocAll);
+     if(!m_cmap) throw Error("Cannot create colour map");
