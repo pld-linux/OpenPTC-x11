@@ -51,7 +51,7 @@ Requires:	%{name} = %{version}
 %description devel
 OpenPTC development package.
 
-%description -l pl devel
+%description devel -l pl
 Pakiet programistyczny dla OpenPTC.
 
 %package static
@@ -63,7 +63,7 @@ Requires:	%{name}-devel = %{version}
 %description static
 OpenPTC static libraries.
 
-%description -l pl static
+%description static -l pl
 Biblioteki statyczne dla OpenPTC.
 
 %prep
