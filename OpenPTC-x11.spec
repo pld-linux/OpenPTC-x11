@@ -5,9 +5,10 @@ Version:	1.0.0
 Release:	4
 License:	LGPL
 Group:		Libraries
-Source0:	http://www.cs.ucl.ac.uk/students/c.nentwich/ptc/%{name}-%{version}.tar.gz
-Patch0:		http://www.cs.ucl.ac.uk/students/c.nentwich/ptc/%{name}-1.0.0-1.0.0-2.patch
-URL:		http://www.cs.ucl.ac.uk/students/c.nentwich/ptc/
+Source0:	http://www.gaffer.org/ptc/download/distributions/Unix/%{name}-%{version}.tar.gz
+# from dead http://www.cs.ucl.ac.uk/students/c.nentwich/ptc/%{name}-1.0.0-1.0.0-2.patch 
+Patch0:		%{name}-1.0.0-1.0.0-2.patch
+URL:		http://www.gaffer.org/ptc/ptc.html
 Requires:	Hermes >= 1.2.4
 BuildRequires:	Hermes-devel >= 1.2.4
 BuildRequires:	XFree86-devel
