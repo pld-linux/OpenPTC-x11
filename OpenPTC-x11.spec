@@ -6,6 +6,7 @@ Release:	4
 License:	LGPL
 Group:		Libraries
 Source0:	http://www.gaffer.org/ptc/download/distributions/Unix/%{name}-%{version}.tar.gz
+# Source0-md5:	7fb728f05ea8bea6b797fd6109f933d4
 # from dead http://www.cs.ucl.ac.uk/students/c.nentwich/ptc/%{name}-1.0.0-1.0.0-2.patch 
 Patch0:		%{name}-1.0.0-1.0.0-2.patch
 URL:		http://www.gaffer.org/ptc/ptc.html
