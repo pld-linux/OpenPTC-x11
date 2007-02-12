@@ -1,5 +1,5 @@
 Summary:	OpenPTC for X11
-Summary(pl.UTF-8):   OpenPTC dla X11
+Summary(pl.UTF-8):	OpenPTC dla X11
 Name:		OpenPTC-x11
 Version:	1.0.0
 Release:	4
@@ -44,7 +44,7 @@ OpenPTC jest dostępne dla X11, GGI, Win32, DOS i JAVA.
 
 %package devel
 Summary:	OpenPTC development package
-Summary(pl.UTF-8):   Pakiet programistyczny dla OpenPTC
+Summary(pl.UTF-8):	Pakiet programistyczny dla OpenPTC
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
@@ -56,7 +56,7 @@ Pakiet programistyczny dla OpenPTC.
 
 %package static
 Summary:	OpenPTC static libraries
-Summary(pl.UTF-8):   Biblioteki statyczne dla OpenPTC
+Summary(pl.UTF-8):	Biblioteki statyczne dla OpenPTC
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
