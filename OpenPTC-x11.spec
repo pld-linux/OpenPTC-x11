@@ -1,5 +1,5 @@
 Summary:	OpenPTC for X11
-Summary(pl):	OpenPTC dla X11
+Summary(pl.UTF-8):   OpenPTC dla X11
 Name:		OpenPTC-x11
 Version:	1.0.0
 Release:	4
@@ -34,36 +34,36 @@ Work for other platforms is in progress. All implementations of PTC
 come with full source code and may be used free of charge even in
 commercial projects.
 
-%description -l pl
-Prometheus Truecolour (OpenPTC) jest trzeci± generacj± standardu dla
-wieloplatformowej niskopoziomowej grafiki. Umo¿liwia operacje na
-frame-bufferze oraz konwersj± (przy pomocy biblioteki Hermes) na ró¿ne
+%description -l pl.UTF-8
+Prometheus Truecolour (OpenPTC) jest trzeciÄ… generacjÄ… standardu dla
+wieloplatformowej niskopoziomowej grafiki. UmoÅ¼liwia operacje na
+frame-bufferze oraz konwersjÄ… (przy pomocy biblioteki Hermes) na rÃ³Å¼ne
 tryby graficzne.
 
-OpenPTC jest dostêpne dla X11, GGI, Win32, DOS i JAVA.
+OpenPTC jest dostÄ™pne dla X11, GGI, Win32, DOS i JAVA.
 
 %package devel
 Summary:	OpenPTC development package
-Summary(pl):	Pakiet programistyczny dla OpenPTC
+Summary(pl.UTF-8):   Pakiet programistyczny dla OpenPTC
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
 %description devel
 OpenPTC development package.
 
-%description devel -l pl
+%description devel -l pl.UTF-8
 Pakiet programistyczny dla OpenPTC.
 
 %package static
 Summary:	OpenPTC static libraries
-Summary(pl):	Biblioteki statyczne dla OpenPTC
+Summary(pl.UTF-8):   Biblioteki statyczne dla OpenPTC
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
 OpenPTC static libraries.
 
-%description static -l pl
+%description static -l pl.UTF-8
 Biblioteki statyczne dla OpenPTC.
 
 %prep
